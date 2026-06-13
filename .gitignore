@@ -1,0 +1,5 @@
+# Keep full/private datasets out of the public repo
+collab dataset.csv
+*.log
+.DS_Store
+.env
