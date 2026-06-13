@@ -1,0 +1,9 @@
+event_date,event_year,affected_country,affected_organization,affected_industry,event_type,event_subtype,motive,description,actor,actor_type,actor_country,source_url
+2024-01-12,2024,United States,Metro Health,Healthcare,Ransomware,Encryption,Financial,Hospital systems disrupted by malware,Group Alpha,Criminal,Unknown,https://example.com
+2024-03-22,2024,United Kingdom,NorthBank,Finance,Data Breach,Credential Theft,Financial,Customer data exposed after phishing campaign,Unknown,Criminal,Unknown,https://example.com
+2023-11-04,2023,Israel,City Services,Government,DDoS,Service Disruption,Hacktivism,Public services website temporarily unavailable,Collective Beta,Hacktivist,Unknown,https://example.com
+2025-02-18,2025,Germany,AutoWerk,Manufacturing,Espionage,Intrusion,Espionage,Intellectual property accessed by suspected intrusion,APT Group,Nation State,Unknown,https://example.com
+2025-05-09,2025,France,RetailCo,Retail,Data Breach,Database Leak,Financial,Customer database leaked on underground forum,Unknown,Criminal,Unknown,https://example.com
+2024-08-17,2024,Canada,Maple University,Education,Data Breach,Unauthorized Access,Financial,Student records accessed through compromised account,Unknown,Criminal,Unknown,https://example.com
+2025-01-28,2025,Japan,Harbor Logistics,Transportation,Ransomware,Operational Disruption,Financial,Shipping operations delayed after ransomware incident,Group Delta,Criminal,Unknown,https://example.com
+2023-09-13,2023,Australia,Southern Energy,Energy,Espionage,Network Intrusion,Espionage,Energy provider investigated suspicious network access,APT Group,Nation State,Unknown,https://example.com
