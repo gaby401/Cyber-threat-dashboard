@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Threat Intelligence Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Cyber Threat Intelligence</p>
+      <h1>Incident Intelligence Dashboard</h1>
+      <p class="subtitle">Upload a cyber incident CSV and explore threat actors, countries, industries, motives, and attack trends.</p>
+    </div>
+    <label class="upload-card">
+      <span>Upload CSV</span>
+      <input id="csvInput" type="file" accept=".csv" />
+    </label>
+  </header>
+
+  <main>
+    <section class="status" id="statusBox">Load a CSV to begin. A small demo dataset is included automatically.</section>
+
+    <section class="cards">
+      <div class="card"><span>Total Incidents</span><strong id="totalIncidents">0</strong></div>
+      <div class="card"><span>Countries</span><strong id="totalCountries">0</strong></div>
+      <div class="card"><span>Industries</span><strong id="totalIndustries">0</strong></div>
+      <div class="card"><span>Threat Actors</span><strong id="totalActors">0</strong></div>
+      <div class="card"><span>Date Range</span><strong id="dateRange">-</strong></div>
+    </section>
+
+    <section class="controls">
+      <input id="searchInput" placeholder="Search organization, actor, country, industry, description..." />
+      <select id="yearFilter"><option value="">All years</option></select>
+      <select id="countryFilter"><option value="">All countries</option></select>
+      <select id="industryFilter"><option value="">All industries</option></select>
+      <select id="typeFilter"><option value="">All event types</option></select>
+      <select id="motiveFilter"><option value="">All motives</option></select>
+      <select id="actorTypeFilter"><option value="">All actor types</option></select>
+      <button id="resetBtn">Reset</button>
+      <button id="exportBtn">Export Filtered CSV</button>
+    </section>
+
+    <section class="grid">
+      <div class="panel"><h2>Incidents by Year</h2><canvas id="yearChart"></canvas></div>
+      <div class="panel"><h2>Top Affected Countries</h2><canvas id="countryChart"></canvas></div>
+      <div class="panel"><h2>Top Industries</h2><canvas id="industryChart"></canvas></div>
+      <div class="panel"><h2>Event Types</h2><canvas id="typeChart"></canvas></div>
+      <div class="panel"><h2>Motives</h2><canvas id="motiveChart"></canvas></div>
+      <div class="panel"><h2>Actor Types</h2><canvas id="actorTypeChart"></canvas></div>
+    </section>
+
+    <section class="table-panel">
+      <div class="table-head">
+        <h2>Incident Explorer</h2>
+        <span id="resultCount">0 results</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Country</th>
+              <th>Organization</th>
+              <th>Industry</th>
+              <th>Type</th>
+              <th>Actor</th>
+              <th>Motive</th>
+            </tr>
+          </thead>
+          <tbody id="incidentTable"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <aside id="drawer" class="drawer hidden">
+    <button id="closeDrawer" class="close">×</button>
+    <h2 id="drawerOrg">Incident Details</h2>
+    <div id="drawerContent"></div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
